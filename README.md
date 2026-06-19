@@ -125,6 +125,20 @@ Username : admin
 Password : admin123
 ```
 
+## Screenshot Aplikasi
+
+| Login | Daftar Author |
+|---|---|
+| ![Login](./screenshots/01-login.png) | ![Daftar Author](./screenshots/02-authors-list.png) |
+
+| Form Tambah Author | Daftar Book |
+|---|---|
+| ![Form Author](./screenshots/03-authors-form.png) | ![Daftar Book](./screenshots/04-books-list.png) |
+
+| Form Tambah Book |
+|---|
+| ![Form Book](./screenshots/05-books-form.png) |
+
 ## Daftar Endpoint (buat testing di Postman)
 
 Semua endpoint dibawah ini balikin **HTML page**, bukan JSON (kecuali pas redirect ya tetep dapet status 302 + header `Location`). Jadi pas testing di Postman, yang dicek bukan body JSON tapi status code-nya & isi HTML-nya.
@@ -164,4 +178,3 @@ Belum yang fancy-fancy, tapi udah ada beberapa lapis:
 - Ini project latihan/tugas, jadi sengaja dibuat seminimal mungkin tanpa CSS framework atau library tambahan yang nggak perlu
 - Validasi input masih basic (pakai `required` di HTML), belum ada validasi lanjutan kayak class-validator
 - Password masih hardcoded di kode, kalau mau lanjut dikembangin baiknya disimpan di `.env` dan di-hash
-- Screenshot aplikasi & video demo (login, CRUD, testing Postman, penjelasan MVC & error handling) belum dimasukkan ke README ini — itu bagian yang harus direkam manual pakai screen recorder sendiri, taruh link videonya disini kalau sudah jadi
