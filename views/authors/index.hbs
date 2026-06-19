@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Author</title>
+</head>
+<body>
+  <nav>
+    <a href="/authors">Authors</a> |
+    <a href="/books">Books</a> |
+    <form action="/logout" method="POST" style="display:inline">
+      <button type="submit">Logout</button>
+    </form>
+  </nav>
+
+  <h1>Daftar Author</h1>
+
+  <form action="/authors" method="GET">
+    <input type="text" name="q" placeholder="Cari nama author..." value="{{q}}">
+    <button type="submit">Cari</button>
+    <a href="/authors">Reset</a>
+  </form>
+
+  <p><a href="/authors/new">+ Tambah Author</a></p>
+
+  <table border="1" cellpadding="6">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nama</th>
+        <th>Bio</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each authors}}
+      <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.bio}}</td>
+        <td>
+          <a href="/authors/{{this.id}}">Detail</a> |
+          <a href="/authors/{{this.id}}/edit">Edit</a> |
+          <form action="/authors/{{this.id}}/delete" method="POST" style="display:inline">
+            <button type="submit" onclick="return confirm('Hapus author ini?')">Hapus</button>
+          </form>
+        </td>
+      </tr>
+      {{else}}
+      <tr>
+        <td colspan="4">Belum ada data author.</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+</html>

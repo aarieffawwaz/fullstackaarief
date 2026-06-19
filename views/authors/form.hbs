@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>{{#if author}}Edit Author{{else}}Tambah Author{{/if}}</title>
+</head>
+<body>
+  <nav>
+    <a href="/authors">Authors</a> |
+    <a href="/books">Books</a> |
+    <form action="/logout" method="POST" style="display:inline">
+      <button type="submit">Logout</button>
+    </form>
+  </nav>
+
+  <h1>{{#if author}}Edit Author{{else}}Tambah Author{{/if}}</h1>
+
+  <form action="{{action}}" method="POST">
+    <div>
+      <label>Nama:</label>
+      <input type="text" name="name" value="{{author.name}}" required>
+    </div>
+    <div>
+      <label>Bio:</label>
+      <textarea name="bio">{{author.bio}}</textarea>
+    </div>
+    <button type="submit">Simpan</button>
+  </form>
+
+  <p><a href="/authors">Kembali</a></p>
+</body>
+</html>

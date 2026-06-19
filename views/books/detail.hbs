@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Detail Book</title>
+</head>
+<body>
+  <nav>
+    <a href="/authors">Authors</a> |
+    <a href="/books">Books</a> |
+    <form action="/logout" method="POST" style="display:inline">
+      <button type="submit">Logout</button>
+    </form>
+  </nav>
+
+  <h1>Detail Book</h1>
+
+  <p><strong>ID:</strong> {{book.id}}</p>
+  <p><strong>Judul:</strong> {{book.title}}</p>
+  <p><strong>Tahun:</strong> {{book.year}}</p>
+  <p><strong>Author:</strong> <a href="/authors/{{book.author.id}}">{{book.author.name}}</a></p>
+
+  <p>
+    <a href="/books/{{book.id}}/edit">Edit</a> |
+    <a href="/books">Kembali</a>
+  </p>
+</body>
+</html>
